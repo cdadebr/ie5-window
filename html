@@ -1,0 +1,314 @@
+<!-- Include the 98.css library -->
+<link rel="stylesheet" href="https://unpkg.com/98.css">
+
+<style>
+  /* Container that scales the IE5 window to 50% of viewport width */
+  .ie5-container {
+    width: 50vw;              /* Set container width to 50% of viewport width */
+    margin: 0 auto;           /* Center the container */
+    position: relative;       /* Establish a positioning context */
+    overflow: hidden;         /* Hide any overflow */
+  }
+
+  /* Scale factor: 50% of viewport width divided by original width */
+  .ie5-window {
+    transform: scale(calc(50vw / 800));
+  }
+</style>
+
+<!-- Main Window -->
+<div class="ie5-window" style="width: 800px; margin: 0 auto; background-color: #D7D1C9; padding: 3px 3px 3px 3px">
+
+  <!-- Title Bar -->
+  <div class="title-bar">
+    <div class="title-bar-text">
+      <img src="data:image/png;base64,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" alt="IE Icon" style="vertical-align: middle; width: 18px;">
+      <span style="position: relative; top: 1px;">
+      Digital Doll - Microsoft Internet Explorer
+      </span>
+    </div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  
+  <div class="ie5-border-sunken">
+    <!-- Menu Bar -->
+    <div style="
+        margin-left: -4px;
+        margin-right: -2px;
+        padding: 0px 2px 2px 4px;
+        background-color: #D7D1C9;
+        font-family: 'Pixelated MS Sans Serif', sans-serif;
+        font-size: 11px;
+        border-bottom: 1px solid #808080;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    ">
+      <!-- Left Aligned Menu Items and Wide Vertical Bar -->
+      <div style="display: flex; align-items: center;">
+        <!-- Wide Vertical Divider -->
+        <div style="
+          width: 2px;
+          background-color: #f7f6f4;
+          margin-right: 8px;
+          align-self: stretch;
+          border-bottom: 1px solid #808080;
+          border-right: 1px solid #808080;
+          margin-top: 2px;
+        "></div>
+
+        <!-- Menu Items -->
+        <div style="display: flex;">
+          <span style="margin-right: 15px;">File</span>
+          <span style="margin-right: 15px;">Edit</span>
+          <span style="margin-right: 15px;">View</span>
+          <span style="margin-right: 15px;">Favorites</span>
+          <span style="margin-right: 15px;">Tools</span>
+          <span>Help</span>
+        </div>
+      </div>
+
+      <!-- Microsoft Logo Aligned to the Right -->
+      <div style="display: flex; align-items: center;">
+        <!-- Skinny Vertical Divider -->
+        <div style="
+          width: 1px;
+          background-color: #000000;
+          align-self: stretch;
+          border-right: 1px solid #ffffff;
+          margin-bottom: -3px;
+        "></div>
+
+        <!-- Microsoft Logo -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAWCAYAAACsR+4DAAAAAXNSR0IArs4c6QAAAsJJREFUSInlls9LlEEYxz+6uTAFFuzuqYlQgzfw0ATrpCz0A4NAhJCgOnQqWP+LDnUKO0aHvdVNvIYguJfCzOmV5rhvmLA0LIEuGx56URI7vO+6QoXvSysFfWGYh5n3YT48P2beHmCPf1C9fxvgdzoSsLG2oaIhhIjsFOoq2Fg8QgVSyphF4XlhZKWA6yFljY0Bywfm9hpASRUA2NLHAdjevoorvaHq70YfmDoKsLbLYO1oCNuZ2zAAGxcmqNfrrK2t4ZxDCIEcHOZaaYNKMYN63o/FQjfB2lH5LCVKKc67FQC0nuJlo4GNw3DGOcI4ZVafRc7v4pxjvPKA5vPVxGCJa2yZKEp389uU3QKZG/fZ0lMsAsPDwwC8nzjJW6V4RB8WBdNXcA+zAMil71jdQm7KRI1wLCkYRKlbYgNUgZlWi/ViVDuDfosnrgDs8EVbMH2gW4yv9gFQBVzpGPjQbDbBHX5W6q4sqQJaTzEHDPoZ4BLrxV2EqAGQNfCaU8j5Xar+4n7hn1r4CqZOGHdoV8E+S8kip3lWiyDm4vVVP0Mul+OmPYEMBE+tJJ93lAFl6gDkcj4KEIFIdFaqVAJks1kGBga4DVyu1ej9+HF/zygFqgwYrhvHzHSd9SIMlTv+YZgsYqnAnCsADYwqUwY+3StyhxFmeY8rlwENFAHzk68xdYJAAEeQStQe+fzkLw+WUsaWjzK9PNXHWV/t7Gt9FjjwXB2idF0ZBFgPlBmlomGcEWYPchufIHiBDUOwMFTp7PWbb3heyHKCOyw1WKc+3qEMVHnMrWaRlZUVnHOcO1fD8zyy2Sw7Ozu0b9LNTcmWzvwq0L9VyrfyIvABlIrvyFEAtC5SwTDZaPDKSUTwAs8L45qKpMKQUEEQiEQNkPoR7wACKna1PZFtexCilrjzjgCsIyGSRSCt/hjsqPR//Vp3Qz8AtLwDutxksk4AAAAASUVORK5CYII=" 
+        alt="Microsoft Logo" style="height: 24px; margin-right: -2px; margin-bottom: -2px">
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div style="
+    margin-left: -4px;
+    margin-right: -2px;
+    padding: 4px 0px 4px 4px;
+    background-color: #D7D1C9;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #808080;            
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  ">
+      <!-- Vertical Divider -->
+      <div style="
+    width: 2px;
+    background-color: #f7f6f4;
+    margin-right: 8px;
+    position: relative;
+    align-self: stretch;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+    margin-top: -2px;
+    margin-bottom: -3px;
+  ">
+      </div>
+      
+      <!-- Back Button -->
+      <div style="margin-right: 2px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVR4nOWQsQ2AMAwEH8RUGStlBvhdski2SJkd0pkCkHBkkBEdfBn5z+cAn454hmbrkaSrbIak9N7Fa7CM5RgjWmu3JiklAJgUYCzXWs2NOWfbYKcihAAAKKV4Ltg0ThGSCvigqyDuT7yEvAUckD9kBaJJMM8lu2ydAAAAAElFTkSuQmCC" alt="Back" style="vertical-align: middle; margin-left: -2px;">
+        <span style="font-family: 'Pixelated MS Sans Serif', sans-serif; font-size: 11px; display: inline-block; vertical-align: middle;">Back</span>
+        <!-- Chevron Icon Enabled -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADCAYAAABbNsX4AAAAGklEQVR4nGNkYGD4z4AGmBgYGBjRxFD4cB0ARMoCBKS0lyYAAAAASUVORK5CYII=" alt="Chevron" style="margin-left: 4px; vertical-align: middle;">
+      </div>
+      
+      <!-- Forward Button -->
+      <div style="margin-right: 4px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAYAAAAi2ky3AAAAAXNSR0IArs4c6QAAAFtJREFUKJHVj8sOADEERd35cMKPm13Tx5BqupmzE5wL0W9RVc/6zy1ZSZTJsJs4IyLDbvmiKPRYRETk7k12LGLmocY80Kf0mNkiAdD2l4sQkEk+RRmRpEz09lVequ8hn8pFB6EAAAAASUVORK5CYII=
+" alt="Forward" style="vertical-align: middle; margin-left: 6px">
+        <!-- Chevron Icon Disabled -->
+        <img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAAXNSR0IArs4c6QAAACpJREFUCJljbGxs/M+ABurr6xkZGRgYGJAl6+rqUFU1Njb+hwF0ExiQBQH/uhZ1ZO7saQAAAABJRU5ErkJggg==" alt="Chevron Disabled" style="margin-left: 4px; vertical-align: middle;"/>
+      </div>
+      <!-- Stop Button -->
+      <div style="margin-right: 4px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA5UlEQVR4nI2TsZGEMAxFn3e2CWqAiD5oyInHiYugDWgDIpwTQRlccCufkc3O/cgWfl/SSBgqCiFctbi11ujYuwZ2XVfA67oCiHEySocQwiVg27YAxBhzGIDjOBjHMbEmh7+BuZZlYZomAPPWH2OMj6CoaZp0fuXZBXbO4ZxLj/QdYBgGgOtVy+C9L0CJaVUNNPAEFwZ577qFfxlowHt/awd+x5grTUFGVytZ38/z/KvAWmu2bQOg7/vHUnV22YPUwjzPX0GB8+ygVnnf90eTHJTsN4OPLkhLUugD3rji98yNKire/wBXvnwFCKqcBAAAAABJRU5ErkJggg==" alt="Stop" style="vertical-align: middle; margin-left: 4px;">
+      </div>
+      <!-- Refresh Button -->
+      <div style="margin-right: 4px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA4ElEQVR4nI2TMa6FIBBFjz9vA+7GRbgOyylsSIhWGhP34JJoXYGxNqGDxl9hHk+MTAUz3DN3CBQA0zSdZITWuvjNfcKibdtHobWWZVkATiCC/OV0DnGeZ4DkAUQEay0AWmuK4mp+QV4ddF0HwLZtGGMwxkT1JEBEEJEI4r2nLMvb2RtARKjrmnEcr1zf948Okw6qqorE3vs8QLiwlHie5zwHwbpzjmEYHjs/AlLidV0fAZ/vjXMOIBIH60qpd0CYVyn1KgxxjbDve1R4E94cHMdxKzZNk8x/R3jcWd85pf0Hfvlgb6pjoyYAAAAASUVORK5CYII=" alt="Refresh" style="vertical-align: middle; margin-left: 4px;">
+      </div>
+      <!-- Home Button -->
+      <div style="margin-right: 4px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA30lEQVR4nLWTsY3DMAxFfw43g5dw6wFceSCVHkBTeApO4CHYEnClgo0BuVGnK+5MKI7s5ALkV6LE90QVAj4Z730GkMv6uHcJq2qe59kA730WkeeCHf5rNMlLghImokxEd5JLwRFOKeWU0oOkKjiDVTWrak3yOqyqWUSqkq9d0jQNiAjDMAAAYox2wbZtAIC2bUFE6Pvezm7lFM45g6dpsqZxHCEiAIB1XdF1nbE2QS3OOZvoLA+CGKONzMwIIfxPsMMAEEIAM18Kvsvi2MzMWJYFwO/ba7kV6+cf5Jx9Pz8khOnYP0e/YgAAAABJRU5ErkJggg==" alt="Home" style="vertical-align: middle; margin-left: 2px; margin-right: 1px;">
+      </div>
+      <!-- Skinny Vertical Divider -->
+      <div style="
+    width: 1px;
+    background-color: #000000;
+    margin-right: 8px;
+    position: relative;
+    align-self: stretch;
+    border-right: 1px solid #ffffff;
+    margin-top: -2px;
+    margin-bottom: -3px;                  
+  ">
+      </div>
+      <!-- Search Button -->
+      <div style="margin-right: 4px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhElEQVR4nI2TMarqQBSGP8UNaJfWxmY2kFRW2YCIkEaEWNpoEZhKm5RuIILYCBZuYBYgFimnmcbCYFohG8gt7suQRB/cH1LM5Hz/OWfOTIcviuO4bO9JKTvfYhubFbher3m9Xrzfb/I8J0kSBoMBo9How6hXhyvwfr9TFAVJkuA4DsvlEoDr9QpQ1hN36rDWmt1uB4DjOARBQFEUaK0RQqC1xhjD6XSyrK1gv98jhABgs9kAfMBCCIwxzTOI47j0PA+A8/lMEAQWTpKkEey6LkCjil49oA27rovv+wAopZBSst1uG6Y9gNvtBoDneQ14NpsxHA4B6Pf7AEgpmc/n1qALEIYhYRhyPB7tD9/3Lfx4PGyCtrr1xWq1qkZlVcH/U1dK2TkcDjyfTwAmk4ntuQ5nWWZbrY/RVqCUIs9z4Pe0pZRcLheyLLNwu3/rAs37b4xhsVgwHo8bwWmaopRqjLH9QErgI0tVdhRFTKfTtslXlV8+AKIoKtM0Lf9V/PFq/yoL/wAKrdV+vY/6yAAAAABJRU5ErkJggg==" alt="Search" style="vertical-align: middle;">
+        <span style="font-family: 'Pixelated MS Sans Serif', sans-serif; font-size: 11px; display: inline-block; vertical-align: middle;">Search</span>
+      </div>
+      <!-- Favorites Button -->
+      <div style="margin-right: 4px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1klEQVR4nMWTu43FIBBFj1dbjmuhCUQ+McnICbEbcBOuhRpIkezEmTdYgbDN0/6CvRISA9zPIID/xlAmIYTzvum9H+5rXYQQzh6Ah+gjQc/5O/DeAwyEEM7jOH48Srr3u/K2bXVurWWe51rnnEkpXc6/9cjW2sshESHnXOsY41OgdV6WpYqICKoK8HDvttC6r+uKMYZpmgBwzn0tUHoWEYwxAKhqdW/jX1po0cZW1Zogxsg4jq8F9n2vpIKUEs65Sn6ZoJDLbRdi63wnw+df+NVLbPh/wwfdeq7vANuz5AAAAABJRU5ErkJggg==" alt="Favorites" style="vertical-align: middle; margin-left: 8px">
+        <span style="font-family: 'Pixelated MS Sans Serif', sans-serif; font-size: 11px; display: inline-block; vertical-align: middle;">Favorites</span>
+      </div>
+      <!-- History Button -->
+      <div style="margin-right: 10px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABU0lEQVR4nJ2TMY7CMBBFX1acgIqW1kfgDkbiBKZOS0UOYAkkDkAXSiS6FJS0cIFY3AAjgUQqd7PNOpsQll3tSCNZ8n9/xmMb/hHWWonr3m+CZmRZllhrZT6fA0iWZUkHtNaKc05CCGKMkRCChBDEOSfWWhER0VoLIB04gjGjwfV6fQVLB25WjPkGbhs8V/0DLD+2/g42xtQJSA9gOBy+vK7RaMR4PKYoCowxDAaDjiax1sr5fAZgvV4DUFUVt9sNgMPh0IHSNG0bTCaTuosm3Ixno9PpxGaz4QNgu91yPB6pqordbtcSeu/x3qOUalWOx0niIB+PB2VZslwua3C1WjGbzWqoLEvSNEVrTVEUAMlH3JxOpyilyPMc730Lirnf79Fa0+/3v2fQ6FaccwDkeQ7A5XIB4H6/A6CUAmCxWNRs+zN8PQ7n3G/TTzqLV0YvoqP/BGTcP0XrU8COAAAAAElFTkSuQmCC" alt="History" style="vertical-align: middle; margin-left: 8px">
+        <span style="font-family: 'Pixelated MS Sans Serif', sans-serif; font-size: 11px; display: inline-block; vertical-align: middle;">History</span>
+      </div>
+      <!-- Skinny Vertical Divider -->
+      <div style="
+    width: 1px;
+    background-color: #000000;
+    margin-right: 8px;
+    position: relative;
+    align-self: stretch;
+    border-right: 1px solid #ffffff;
+    margin-top: -2px;
+    margin-bottom: -3px;                  
+  ">
+      </div>
+      <!-- Mail Button -->
+      <div style="margin-right: 2px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4nJWTMY6DMBBFX1Y5Q+ocgooGqpRIuQN1aswBhlQpchGklFQcINQUaamMkCjpJs0SQWLY7JcsWZ75f8bf442IKF8gTVOAzUdARHQYhtV1v98VcBbajpvz+fw6TJLkm6bmAv8hOQVOp5Mz4Xq9fiewllgUBWVZEoah8mbknx3s93t83ycIAqy17Ha7ucjaK4iIlmWpqqrWWrXWal3XsxdZ7GBauW1bALquA+B2uxFFkQIbpweXywXASX48HjRNg4iQpqn+LBlnjCHLMie573viOIZfMz4mTEQwxlBVFUVROMWrqsLzPLa45ht0JBtjZoG2bcmyjMPhAExMfMeUPPow4ng8kuf56wofEBEdK6zB8zy3AAs/z4UnRL3GeDZ2omIAAAAASUVORK5CYII=" alt="Mail" style="vertical-align: middle;">
+        <!-- Chevron Icon Enabled -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADCAYAAABbNsX4AAAAGklEQVR4nGNkYGD4z4AGmBgYGBjRxFD4cB0ARMoCBKS0lyYAAAAASUVORK5CYII=" alt="Chevron" style="margin-left: -1px; margin-right: 6px; vertical-align: middle;">
+      </div>
+      <!-- Print Button -->
+      <div style="margin-right: 4px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8ElEQVR4nKWSvY2EMBCFPyTKIaQMRAvONyR0ARPSAz1QhltwQkDgBMlOnM0lh5e982p37540sjXy83vzA/9EU0uKiL4iWmurXEREnXOac66Gc06BItDWPum6jnmef+WnaaLv+6fOP1avOnhDncsndyev1HPOCuh3g8vZnORqTRVYaxERrLV35atKCEFDCOq9V++9OudK1By0QLXmGk5lESm59mwQQIyRlBLHcQCwrmt5OAxDKeFyNmUKP8kAt9ut3Ldte+jDFfppGGPKPpxz1JwzMUYAUkoAxc2+7wCM44gxhmVZCve6km+Pkmer/Bd8AbNL+Dgy7O/3AAAAAElFTkSuQmCC" alt="Print" style="vertical-align: middle;">
+      </div>
+    </div>
+
+    <!-- Address Bar -->
+    <div style="
+    margin-left: -2px;
+    margin-right: -2px;
+    padding: 0px 0px 0px 2px; /* Adjusted padding */
+    background-color: #D7D1C9;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #FFFFFF;  /* White top border */
+  ">
+      <!-- Wide Vertical Divider -->
+      <div style="
+    width: 2px;
+    background-color: #f7f6f4;
+    margin-right: 8px;
+    position: relative;
+    align-self: stretch;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  ">
+      </div>
+      <span style="font-family: 'Pixelated MS Sans Serif', sans-serif; font-size: 11px; margin-right: 8px;">Address</span>
+      <input type="text" style="flex: 1; margin-right: 4px; padding-bottom: 2px;" value="http://">
+      <div style="margin-left: 4px; margin-right: -2px; display: inline-flex; align-items: center; padding: 4px; background-color: #D7D1C9;">
+  <!-- Arrow icon added to the left of "Go" -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAPCAYAAAA/I0V3AAAAAXNSR0IArs4c6QAAAMhJREFUKJGNkbsNhDAQRJ9PVwkxPVABxRBSgUugEDJ6IANCJ0ibWkIEznzBYev4+ZjAwWiedmcNCWmt/ZX/SkGbTuBfyDl3At9P1jLGkGWZBxThOYarqoqeiDDPMwBFUQAo9QuEsIhEKADLsjAMA3VdfycFQESw1tJ1HQB5nkc4AICKnUSEcRwpy3LXr23bHRDXcs75vu/98UqA33rufa21N8ZcAWze9T9Zay/yUepovADWdX0MRGiaptSkW/mmae56Jcf7G/+kDxxcasiwy5+DAAAAAElFTkSuQmCC" 
+             alt="Arrow Icon" 
+             style="vertical-align: middle; margin-right: 2px;">
+        Go
+      </div>
+
+      <!-- Skinny Vertical Divider -->
+      <div style="
+        width: 1px;
+        background-color: #000000;
+        align-self: stretch;
+        border-right: 1px solid #ffffff;
+        margin-left: 8px;
+        margin-right: 3px;
+      "></div>
+      
+      <!-- Wide Vertical Divider -->
+      <div style="
+    width: 2px;
+    background-color: #f7f6f4;
+    margin-right: 4px;
+    position: relative;
+    align-self: stretch;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  ">
+      </div>
+      <div style="font-family: 'Pixelated MS Sans Serif', sans-serif; font-size: 11px; margin-right: 4px; display: flex; align-items: center;">
+        Links
+        <!-- Add the double chevron icon -->
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAAXNSR0IArs4c6QAAACFJREFUCJljYGBg+A/FMIDOxyoI5zOiCSKLoZiC1xq8kgDJ1BHxDyBiBgAAAABJRU5ErkJggg==" alt="Double Chevron" style="margin-left: 4px; vertical-align: middle; position: relative; top: -4px;">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Separator -->
+  <hr style="border: none; height: 0; border-top: 1px solid #808080; border-bottom: 1px solid #FFFFFF; margin: 0;">
+
+  <!-- Main Content Area -->
+  <div class="window-body" style="
+  height: 400px;
+  background-color: #FFFFFF;
+  box-shadow: inset -1px -1px #fff, 
+              inset 1px 1px grey, 
+              inset -2px -2px #dfdfdf, 
+              inset 2px 2px #0a0a0a;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 4px 0px 2px 0px;
+">
+    <!-- Main content goes here -->
+    
+  </div>
+
+    <!-- Taskbar Containers -->
+  <div style="width: 800px; margin: 0 auto; background-color: #D7D1C9; display: flex; align-items: stretch; box-sizing: border-box;">
+
+    <!-- Start Button Container (71.4% width) -->
+    <div style="flex: 7 1 0%; display: flex; justify-content: flex-start; background-color: #D7D1C9; border-top: 1px solid #808080; border-left: 1px solid #808080; border-bottom: 1px solid #FFFFFF; border-right: 1px solid #FFFFFF;">
+      <div style="margin-right: 4px; padding: 1px; display: inline-flex; align-items: center;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAYAAADwikbvAAAAAXNSR0IArs4c6QAAAO1JREFUKJGVkjtuxDAMRB+NvYHS7z22cU7kIuk2gA0X1jm2yT0iFQukTJXaB/AZJoX8jeUNMgDBQpzhkCK9c0zRtq0eIYSgtm011Rf8E3Vdc6sqAZweFZqlLKVcluX81oA2nZvmhBlzgEdaiwhJhBAAFtvn4UXevyHZSu6KmZ8779A7B3TyPgnDsiDolEx3u8UBoneONTEfeXLx/jrocvnArBu9+Az9mnVdANzvz5s5Y4zEGDHz4/J8fmbvJ7usZjy2vJsZpO+vz1FgiaOL25Angb/O8zd5vrDePdmNSjHGg0/dw1LXhPMwHJ1DFj9Noynm5jwhwQAAAABJRU5ErkJggg=="
+          alt="Start" style="vertical-align: middle;">
+      </div>
+    </div>
+
+    <!-- Spacer 1 (2.81% width) -->
+    <div style="flex: 0.281 1 0%; background-color: #D7D1C9; padding: 2px; border-top: 1px solid #808080; border-left: 1px solid #808080; border-bottom: 1px solid #FFFFFF; border-right: 1px solid #FFFFFF; margin-left: 2px">
+    </div>
+
+    <!-- Spacer 2 (2.81% width) -->
+    <div style="flex: 0.281 1 0%; background-color: #D7D1C9; padding: 2px; border-top: 1px solid #808080; border-left: 1px solid #808080; border-bottom: 1px solid #FFFFFF; border-right: 1px solid #FFFFFF; margin-left: 2px;">
+    </div>
+
+    <!-- Internet Button Container (21.1% width) -->
+    <div style="flex: 2.11 1 0%; display: flex; justify-content: flex-start; padding: 1px; background-color: #D7D1C9; border-top: 1px solid #808080; border-left: 1px solid #808080; border-bottom: 1px solid #FFFFFF; border-right: 1px solid #FFFFFF; position: relative; margin-left: 2px;">
+      <div style="display: inline-flex; vertical-align: middle;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAAXNSR0IArs4c6QAAALZJREFUKJFtktsNgkAQRQ/ELuxF7EWrkITNmGARxmbWXqzj+rHsYxYu4Wc4Z4YdGOhiZuprIYShrxXYzCRJMUYhhDU3q3ZCAfPlBG1SI5pZBdSATpAANWdQhQooL5Rn6ORP3O/gBTyI8ct0AZ6pOh5upSQLUxEA0iTbNvr7wPvWbGhwE3LGQCBeIyzA+V4b5HQCQCIMsTRAWD1l81ZPTl3EQceS0mRuJgG7L+4yuzc7+qeOZMf9AbtcdJOVnhiqAAAAAElFTkSuQmCC"
+          alt="Internet" style="width: 100%; height: 100%; object-fit: contain; vertical-align: middle; margin-right: 4px;">
+        <span>Internet</span>
+      </div>
+
+      <!-- Resize Icon Overlay -->
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAFNJREFUKJGVz7kVwCAMBNGhGyKHroGQiILUuBzZzxwCaeO/wUBgqqopgkUE1+HFwPnwx62W/WHE+brtwwqbDRZeNuzw1HDCXYMHfw1eDJAiuNXCAzmZZFyv0euRAAAAAElFTkSuQmCC"
+        alt="Resize Icon" style="position: absolute; bottom: -1px; right: -1px; width: 12px; height: 12px;">
+    </div>    
+  </div>
+</div>
